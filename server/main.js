@@ -38,3 +38,18 @@ Meteor.startup(function () {
 Meteor.publish("bills", function() {
   return Bills.find({});
 });
+
+Meteor.publish("billfiles", function() {
+  return BillFiles.find({});
+});
+
+BillFiles.allow({
+  'insert': function () {
+    // add custom authentication code here
+    return true;
+  },
+  'update': function () {
+    // add custom authentication code here
+    return true;
+  }
+});
